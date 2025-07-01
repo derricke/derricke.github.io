@@ -6,7 +6,7 @@ import React from 'react';
 const posts = [
   { slug: 'my-first-post', title: 'My First Blog Post', content: 'This is the content of my first post.' },
   { slug: 'another-entry', title: 'Another Entry', content: 'Here is some more content for another post.' },
-  { slug: 'learning-nextjs', title: 'Learning Next.js', content: 'Static exports are powerful!' },
+  { slug: 'learning-nextjs', title: 'Learning Next.js', content: 'Static exports are powerful! ' },
 ];
 
 // --- 2. generateStaticParams Function ---
