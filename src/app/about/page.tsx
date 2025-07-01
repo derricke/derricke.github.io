@@ -24,8 +24,7 @@ export default function AboutPage() {
 
         {/* Right Column (70% width on medium screens and up) */}
         <div className="md:col-span-7 border border-gray-200 rounded-lg p-6 shadow-sm">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">My Story</h2>
-          <div className="mt-4 text-gray-600">
+          <div className="text-gray-600">
             <Skills />
           </div>
         </div>

@@ -4,7 +4,7 @@ import ContactMap from '@/components/ContactMap'; // Import the new client compo
 export default function ContactPage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Contact Me</h1>
+      <h3 className="text-2xl font-semibold text-center mb-4">Don’t hesitate to reach out!</h3>
       
       {/* - Changed from 'grid' to 'flex' to control stacking order on mobile.
         - 'flex-col-reverse' stacks the form below the map on mobile screens.
@@ -14,7 +14,6 @@ export default function ContactPage() {
         
         {/* Left Column for Contact Form */}
         <div className="w-full md:w-5/12">
-          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
           <div className="h-[821px] rounded-lg overflow-hidden shadow-md">
             <iframe 
               src="https://docs.google.com/forms/d/e/1FAIpQLSfbOtPTuB60eO9PTivqZkWJ_o6C1r1BcXLbdChIvIqgq5hqXA/viewform?embedded=true" 
@@ -31,7 +30,7 @@ export default function ContactPage() {
         {/* Right Column for the Map and contact info */}
         <div className="w-full md:w-7/12">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">My Location</h2>
+
             <div className="rounded-lg overflow-hidden shadow-md">
               <ContactMap />
             </div>
@@ -39,7 +38,7 @@ export default function ContactPage() {
           
           {/* Contact Information Section */}
           <div className="mt-8">
-            <h3 className="text-2xl font-semibold mb-4">Don’t hesitate to reach out!</h3>
+            
             <p className="text-gray-600 mb-4">
               Derrick Emery currently lives and works in The Woodlands, Texas. For any questions, work or partnership requests please feel free to get in touch.
             </p>
