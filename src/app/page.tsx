@@ -4,10 +4,10 @@ import Quotes from '@/components/Quotes';
 
 export default function Home() {
   return (
-    <main>
+      <>
       <div className="w-full">
         <Image
-          src="/site-header.png" // The path to your image in the 'public' folder
+          src="/images/site-banner.png" // The path to your image in the 'public' folder
           alt="Site banner"
           width={1500} // IMPORTANT: Replace with your image's actual width
           height={318} // IMPORTANT: Replace with your image's actual height
@@ -29,6 +29,8 @@ export default function Home() {
       <Features category="main2" />
 
       <Quotes category="main" />
-    </main>
+
+    </>
+
   );
 }

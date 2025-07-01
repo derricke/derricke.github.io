@@ -67,17 +67,19 @@ export default function Features({ category }: FeaturesProps) {
     }
 
     const featureBlockProps = {
-      bgColorClass: 'gray-100',
-      iconColorClass: 'orange-500',
-      hoverBgColorClass: 'orange-500',
-      hoverIconColorClass: 'white'
+      bgColorClass: 'bg-gray-100',
+      iconColorClass: 'text-orange-500',
+      hoverBgColorClass: 'group-hover:bg-orange-500',
+      hoverIconColorClass: 'group-hover:text-white',
+      hoverBorderColorClass: 'group-hover:border-orange-500'
     };
 
     if (category === 'main2') {
-      featureBlockProps.bgColorClass = 'gray-100';
-      featureBlockProps.iconColorClass = '[#82D0AC]';
-      featureBlockProps.hoverBgColorClass = '[#82D0AC]';
-      featureBlockProps.hoverIconColorClass = 'white';
+      featureBlockProps.bgColorClass = 'bg-gray-100';
+      featureBlockProps.iconColorClass = 'text-[#82D0AC]';
+      featureBlockProps.hoverBgColorClass = 'group-hover:bg-[#82D0AC]';
+      featureBlockProps.hoverIconColorClass = 'group-hover:text-white';
+      featureBlockProps.hoverBorderColorClass = 'group-hover:border-[#82D0AC]';
     }
 
   return (
