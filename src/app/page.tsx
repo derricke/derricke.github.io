@@ -15,10 +15,10 @@ export default function Home() {
           priority // Add this to preload the image since it's likely above the fold
         />
       </div>
+
+      <Quotes category="main" />
       
-      <div className="w-full h-30 bg-black flex items-center justify-center text-center shadow-md px-4">
-        <p className="text-white text-2xl sm:text-4xl font-medium tracking-wider">Coded to pixel perfection.</p>
-      </div>
+      
 
       <Features category="main" />
 
@@ -28,7 +28,9 @@ export default function Home() {
 
       <Features category="main2" />
 
-      <Quotes category="main" />
+      <div className="w-full h-30 bg-black flex items-center justify-center text-center shadow-md px-4">
+        <p className="text-white text-2xl sm:text-4xl font-medium tracking-wider">Coded to pixel perfection.</p>
+      </div>
 
     </>
 
