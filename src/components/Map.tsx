@@ -7,7 +7,8 @@ import L from 'leaflet';
 
 // This is a fix for a known issue with Leaflet and Webpack where the default icon paths are not resolved correctly.
 // We manually import the icons and set their paths.
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+// @ts-expect-error - This comment suppresses the TypeScript error for the following line.
+delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
