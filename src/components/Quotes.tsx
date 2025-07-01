@@ -87,7 +87,7 @@ export default function Quotes({ category }: QuotesProps) {
   }
 
   return (
-    <div className="py-20 bg-black">
+    <div className="py-10 bg-black">
       {/* The container has a fixed height and overflow-hidden to create the carousel effect */}
       <div 
         className="container mx-auto text-center relative h-60 flex items-center justify-center overflow-hidden"
