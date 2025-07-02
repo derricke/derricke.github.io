@@ -1,5 +1,26 @@
-import React from 'react';
+import { Metadata } from 'next';
 import ContactMap from '@/components/ContactMap'; // Import the new client component
+
+export const metadata: Metadata = {
+  title: 'Contact Me',
+  description: 'Contact Derrick Emery',
+  
+  // Open Graph tags for the Contact page
+  openGraph: {
+    title: 'Contact Derrick Emery',
+    description: 'Get in touch with Derrick Emery.',
+    // You could create a specific OG image for this page if you want
+    // images: ['/contact-og-image.png'], 
+  },
+
+  // Twitter-specific tags for the Contact page
+  twitter: {
+    title: 'Contact Derrick Emery',
+    description: 'Get in touch with Derrick Emery.',
+    // You could also specify a different image for Twitter cards
+    // images: ['/contact-twitter-image.png'], 
+  },
+};
 
 export default function ContactPage() {
   return (

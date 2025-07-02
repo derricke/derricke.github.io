@@ -7,7 +7,7 @@ export default function Home() {
       <>
       <div className="w-full">
         <Image
-          src="/images/site-banner.png" // The path to your image in the 'public' folder
+          src="https://ik.imagekit.io/derricke/site-banner.png" // The path to your image in the 'public' folder
           alt="Site banner"
           width={1500} // IMPORTANT: Replace with your image's actual width
           height={318} // IMPORTANT: Replace with your image's actual height

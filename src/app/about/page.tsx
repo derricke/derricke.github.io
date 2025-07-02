@@ -1,7 +1,28 @@
 // Location: src/app/about/page.tsx
 
-import React from 'react';
+import { Metadata } from 'next';
 import Skills from '@/components/Skills';
+
+export const metadata: Metadata = {
+  title: 'About Me',
+  description: 'Learn more about Derrick Emery, his background, skills, and what drives him.',
+  
+  // Open Graph tags for the About page
+  openGraph: {
+    title: 'About Derrick Emery',
+    description: 'Discover the story behind the developer.',
+    // You could create a specific OG image for this page if you want
+    // images: ['/about-og-image.png'], 
+  },
+
+  // Twitter-specific tags for the About page
+  twitter: {
+    title: 'About Derrick Emery',
+    description: 'Discover the story behind the developer.',
+    // You could also specify a different image for Twitter cards
+    // images: ['/about-twitter-image.png'], 
+  },
+};
 
 export default function AboutPage() {
   return (
