@@ -8,6 +8,8 @@ import "../../public/css/fontawesome.css";
 import "../../public/css/solid.css";
 import "../../public/css/brands.css";
 
+const baseUrl = 'https://derrickemery.com';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,8 +21,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Derrick Emery",
+  title: "Derrick Emery - Developer & Creator",
   description: "Personal Site and Blog of Derrick Emery",
+  // Defines the canonical URL, which is the preferred URL for your site's homepage
+  metadataBase: new URL(baseUrl),
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -31,6 +35,44 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
+  // Open Graph (OG) tags control how your content is displayed when shared on social media
+  openGraph: {
+    title: 'Derrick Emery - Developer & Creator',
+    description: 'The personal website and blog of Derrick Emery.',
+    url: baseUrl,
+    siteName: 'Derrick Emery',
+    images: [
+      {
+        url: '/og-image.png', // Place this image in your `public` directory
+        width: 1536,
+        height: 768,
+        alt: 'Derrick Emery Website',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+
+  // Twitter-specific tags
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Derrick Emery - Developer & Creator',
+    description: 'The personal website and blog of Derrick Emery.',
+    images: [`${baseUrl}/og-image.png`], // Must be an absolute URL
+  },
+
+  // Other useful metadata
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
