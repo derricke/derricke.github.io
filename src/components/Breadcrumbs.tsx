@@ -52,7 +52,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
                 className={`text-xs font-mono uppercase tracking-tight transition-colors ${
                   item.current
                     ? 'text-zinc-900 dark:text-zinc-100 cursor-default'
-                    : 'text-zinc-500 dark:text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400'
+                    : 'text-zinc-500 dark:text-zinc-500 hover:text-emerald-800 dark:hover:text-emerald-400 border-b border-transparent hover:border-emerald-500/30'
                 }`}
                 aria-current={item.current ? 'page' : undefined}
               >

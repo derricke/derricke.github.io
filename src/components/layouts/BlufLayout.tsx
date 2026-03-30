@@ -72,7 +72,7 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
                   href={author.links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-900 dark:text-gray-100 font-medium hover:underline"
+                  className="text-zinc-900 dark:text-zinc-100 font-bold hover:text-zinc-950 dark:hover:text-white transition-colors underline decoration-zinc-200/0 hover:decoration-zinc-200/50 underline-offset-4"
                 >
                   {contentInfo.author.name}
                 </a>
@@ -89,9 +89,9 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
         {/* BLUF Summary - Engineered for LLM Extraction */}
         <aside 
           aria-label="Key Takeaways" 
-          className="bg-zinc-50 dark:bg-zinc-900/30 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-emerald-500 shadow-sm"
+          className="bg-zinc-50 dark:bg-zinc-900/30 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-emerald-600/50 shadow-sm"
         >
-          <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-2 text-emerald-600 dark:text-emerald-400">
+          <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-2 text-zinc-500 dark:text-zinc-400">
             [EXECUTIVE_SUMMARY]
           </h2>
           <p className="text-base leading-relaxed text-zinc-800 dark:text-zinc-300 font-outfit">
