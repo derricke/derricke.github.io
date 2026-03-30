@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PostCard } from '@/components/PostCard';
+import { getAuthorProfile } from '@/lib/content/authors';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Blog | Derrick Emery',
@@ -26,16 +27,30 @@ export default function BlogIndexPage() {
           name: 'Derrick Emery Blog',
           url: `${siteUrl}/blog`,
           description: 'Thoughts, tutorials, and deep dives into everything Derrick is interested in.',
-          blogPost: posts.map((post) => ({
-            '@type': 'BlogPosting',
-            headline: post.title,
-            url: `${siteUrl}/blog/${post.category}/${post.slug}`,
-            datePublished: post.publishedAt,
-            author: {
-              '@type': 'Person',
-              name: post.author.name,
-            },
-          })),
+          publisher: {
+            '@type': 'Organization',
+            name: 'Derrick Emery',
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/logo.png`,
+            }
+          },
+          blogPost: posts.map((post) => {
+            const author = getAuthorProfile(post.author.name);
+            return {
+              '@type': 'BlogPosting',
+              headline: post.title,
+              description: post.description,
+              url: `${siteUrl}/blog/${post.category}/${post.slug}`,
+              datePublished: post.publishedAt,
+              author: {
+                '@type': 'Person',
+                name: post.author.name,
+                url: author?.links.linkedin || `${siteUrl}/about`,
+                sameAs: author?.sameAs || []
+              },
+            };
+          }),
         }}
       />
 

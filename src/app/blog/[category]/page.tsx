@@ -5,6 +5,7 @@ import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getAllCategories, getCategoryBySlug, getPostsByCategory } from '@/lib/content/api';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { getAuthorProfile } from '@/lib/content/authors';
 
 
 import { PostCard } from '@/components/PostCard';
@@ -49,16 +50,30 @@ export default async function CategoryPage({
           name: `${cat.title} — Derrick Emery Blog`,
           url: `${siteUrl}/blog/${cat.slug}`,
           description: cat.description,
-          blogPost: posts.map((post) => ({
-            '@type': 'BlogPosting',
-            headline: post.title,
-            url: `${siteUrl}/blog/${cat.slug}/${post.slug}`,
-            datePublished: post.publishedAt,
-            author: {
-              '@type': 'Person',
-              name: post.author.name,
-            },
-          })),
+          publisher: {
+            '@type': 'Organization',
+            name: 'Derrick Emery',
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/logo.png`, // Placeholder for future logo
+            }
+          },
+          blogPost: posts.map((post) => {
+            const author = getAuthorProfile(post.author.name);
+            return {
+              '@type': 'BlogPosting',
+              headline: post.title,
+              description: post.description,
+              url: `${siteUrl}/blog/${cat.slug}/${post.slug}`,
+              datePublished: post.publishedAt,
+              author: {
+                '@type': 'Person',
+                name: post.author.name,
+                url: author?.links.linkedin || `${siteUrl}/about`,
+                sameAs: author?.sameAs || []
+              },
+            };
+          }),
         }}
       />
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ContentItem } from '@/lib/content/types';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { getAuthorProfile } from '@/lib/content/authors';
 
 interface BlufLayoutProps {
   contentInfo: ContentItem;
@@ -33,37 +34,53 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
       )}
       {/* JSON-LD Schemas injected safely into the DOM */}
       <JsonLd 
-        type="Article" 
+        type="BlogPosting" 
         data={{
           headline: contentInfo.title,
           description: contentInfo.description,
-          author: { '@type': 'Person', name: contentInfo.author.name },
+          author: (() => {
+            const author = getAuthorProfile(contentInfo.author.name);
+            return {
+              '@type': 'Person',
+              name: contentInfo.author.name,
+              url: author?.links.linkedin || `${siteUrl}/about`,
+              description: author?.bio,
+              sameAs: author?.sameAs || []
+            };
+          })(),
           publisher: orgSchema,
           datePublished: contentInfo.publishedAt,
           dateModified: contentInfo.lastModifiedAt || contentInfo.publishedAt,
-          mainEntityOfPage: { '@type': 'WebPage', '@id': currentUrl }
+          mainEntityOfPage: { '@type': 'WebPage', '@id': currentUrl },
+          wordCount: contentInfo.content ? contentInfo.content.split(/\s/g).length : undefined,
+          timeRequired: contentInfo.readTime,
+          inLanguage: 'en-US',
         }} 
       />
-      {breadcrumbs && (
-        <JsonLd 
-          type="BreadcrumbList" 
-          data={{
-            itemListElement: breadcrumbs.map((crumb, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              name: crumb.name,
-              item: `${siteUrl}${crumb.item}`,
-            })),
-          }} 
-        />
-      )}
 
       <header className="mb-8 border-b border-gray-200 dark:border-gray-800 pb-6">
         <h1 className="text-4xl font-bold tracking-tight mb-4">{contentInfo.title}</h1>
         
         {/* E-E-A-T Metadata Block */}
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6 space-x-4">
-          <span>By {contentInfo.author.name}</span>
+          <span>
+            By{' '}
+            {(() => {
+              const author = getAuthorProfile(contentInfo.author.name);
+              return author ? (
+                <a 
+                  href={author.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-900 dark:text-gray-100 font-medium hover:underline"
+                >
+                  {contentInfo.author.name}
+                </a>
+              ) : (
+                contentInfo.author.name
+              );
+            })()}
+          </span>
           <time dateTime={contentInfo.publishedAt}>
             {new Date(contentInfo.publishedAt).toLocaleDateString()}
           </time>
