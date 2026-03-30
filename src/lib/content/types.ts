@@ -7,6 +7,7 @@ export interface Author {
 // Frontmatter schema for articles/pages enforcing E-E-A-T signals
 export interface ContentItem {
   slug: string;
+  category: string; // Category slug, e.g. "seo", "ai-tools"
   title: string;
   description: string;
   // AIO Focus: The "Bottom Line Up Front" summary engineered for LLM consumption
@@ -18,3 +19,13 @@ export interface ContentItem {
   tags?: string[];
   content?: string; // Markdown/HTML body (optional depending on how layout wraps it)
 }
+
+// Frontmatter schema for category index.mdx files.
+// Architecturally a category is just a blog post whose children are its posts.
+export interface CategoryItem {
+  slug: string;     // Derived from the directory name
+  title: string;
+  description: string;
+  content?: string; // Body of the index.mdx (intro text)
+}
+

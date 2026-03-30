@@ -24,7 +24,7 @@ export async function GET() {
   llmsTxt += `### Blog Posts\n\n`;
   
   allContent.forEach(item => {
-    llmsTxt += `- [${item.title}](${siteUrl}/blog/${item.slug})\n`;
+    llmsTxt += `- [${item.title}](${siteUrl}/blog/${item.category}/${item.slug})\n`;
     llmsTxt += `  Summary: ${item.blufSummary}\n\n`;
   });
 

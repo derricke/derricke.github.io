@@ -10,7 +10,7 @@ interface BlufLayoutProps {
 
 export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://derrickemery.com';
-  const currentUrl = `${siteUrl}/${contentInfo.slug}`;
+  const currentUrl = `${siteUrl}/blog/${contentInfo.category}/${contentInfo.slug}`;
 
   // Organization info can be defined globally and passed down, or hardcoded if single-author
   const orgSchema = {
