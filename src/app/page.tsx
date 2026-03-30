@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Features from '@/components/Features';
 import Quotes from '@/components/Quotes';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -6,38 +7,62 @@ import { constructMetadata } from '@/lib/seo/metadata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Derrick Emery - Principal SEO & Expert Next.js Developer',
+  title: 'Derrick Emery - Technical strategy, team leadership and development expert',
   description: 'Experienced in transforming complex business requirements into robust, highly scalable digital platforms.',
   path: '/',
 });
 
 export default function Home() {
   return (
-      <>
-      <JsonLd 
+    <>
+      <JsonLd
         type="WebSite"
         data={{
           name: 'Derrick Emery',
           url: 'https://derrickemery.com',
-          description: 'Consulting and development services from an Expert Next.js Developer and Principal SEO Strategist.',
+          description: 'Consulting and development services from a technical strategist, team leader and development expert.',
           author: {
             '@type': 'Person',
             name: 'Derrick Emery'
           }
         }}
       />
-      <h1 className="sr-only">Derrick Emery - Expert Next.js Developer & SEO Strategist</h1>
 
-      <div className="w-full">
-        <Image
-          src="https://ik.imagekit.io/derricke/site-banner.png" // The path to your image in the 'public' folder
-          alt="Site banner"
-          width={1500} // IMPORTANT: Replace with your image's actual width
-          height={318} // IMPORTANT: Replace with your image's actual height
-          className="w-full h-auto shadow-md" // Makes the image responsive and adds styling
-          priority // Add this to preload the image since it's likely above the fold
-        />
-      </div>
+      <section className="relative flex flex-col group overflow-hidden">
+        {/* The Banner Image: Using original width/height props to ensure perfect desktop scaling */}
+        <div className="w-full">
+          <Image
+            src="https://ik.imagekit.io/derricke/site-banner.png"
+            alt="Site banner"
+            width={1500}
+            height={318}
+            className="w-full h-auto shadow-md"
+            priority
+          />
+        </div>
+
+        {/* 
+          Main Hero Content:
+          - Mobile (default): static block below the image with dark background.
+          - Desktop (md:): absolute overlay with gradient.
+        */}
+        <div className="bg-zinc-900 md:bg-transparent md:absolute md:inset-0 md:bg-gradient-to-r md:from-black/80 md:via-black/30 md:to-transparent flex flex-col justify-center px-6 py-10 md:py-0 md:px-12 lg:px-24">
+          <h1 className="text-white text-3xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-4 max-w-4xl drop-shadow-lg leading-tight md:text-left text-center">
+            Technical Strategist, Team Leader & Development Expert
+          </h1>
+          <p className="text-zinc-400 md:text-gray-200 text-lg md:text-xl mb-8 md:mb-8 max-w-xl font-light drop-shadow-md md:text-left text-center">
+            Transforming complex requirements into scalable digital platforms.
+          </p>
+          <div className="flex md:justify-start justify-center">
+            <Link 
+              href="/about" 
+              className="inline-block bg-white text-black hover:bg-black hover:text-white border-2 border-white px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 transform md:hover:-translate-y-1 shadow-lg"
+            >
+              Learn More About Derrick
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section aria-labelledby="testimonials">
         <h2 id="testimonials" className="sr-only">Client Testimonials</h2>
