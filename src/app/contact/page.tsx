@@ -1,30 +1,30 @@
 import { Metadata } from 'next';
 import ContactMap from '@/components/ContactMap'; // Import the new client component
+import { constructMetadata } from '@/lib/seo/metadata';
+import { JsonLd } from '@/components/seo/JsonLd';
 
-export const metadata: Metadata = {
-  title: 'Contact Me',
-  description: 'Contact Derrick Emery',
-  
-  // Open Graph tags for the Contact page
-  openGraph: {
-    title: 'Contact Derrick Emery',
-    description: 'Get in touch with Derrick Emery.',
-    // You could create a specific OG image for this page if you want
-    // images: ['/contact-og-image.png'], 
-  },
-
-  // Twitter-specific tags for the Contact page
-  twitter: {
-    title: 'Contact Derrick Emery',
-    description: 'Get in touch with Derrick Emery.',
-    // You could also specify a different image for Twitter cards
-    // images: ['/contact-twitter-image.png'], 
-  },
-};
+export const metadata: Metadata = constructMetadata({
+  title: 'Contact Derrick Emery',
+  description: 'Get in touch with Derrick Emery for work or partnership requests.',
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
+      <JsonLd 
+        type="Organization"
+        data={{
+          name: 'Derrick Emery',
+          url: 'https://derrickemery.com',
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+1-936-931-7467',
+            email: 'derrick@derrickemery.com',
+            contactType: 'customer service',
+          }
+        }}
+      />
       <h3 className="text-2xl font-semibold text-center mb-4">Don’t hesitate to reach out!</h3>
       
       {/* - Changed from 'grid' to 'flex' to control stacking order on mobile.

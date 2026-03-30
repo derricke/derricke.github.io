@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Copyright Text */}
           <div className="text-center sm:text-left mb-4 sm:mb-0">
-            <p>&copy; 2025 Derrick Emery. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Derrick Emery. All Rights Reserved.</p>
           </div>
 
           {/* Social Media Icons */}

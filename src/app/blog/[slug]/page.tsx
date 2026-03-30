@@ -1,50 +1,60 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getAllPosts, getPostBySlug } from '@/lib/content/api';
+import { BlufLayout } from '@/components/layouts/BlufLayout';
+import { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo/metadata';
 
-// --- 1. Mock Data Source ---
-// In a real application, you would fetch this data from a CMS, a database,
-// or local markdown files.
-const posts = [
-  { slug: 'my-first-post', title: 'My First Blog Post', content: 'This is the content of my first post.' },
-  { slug: 'another-entry', title: 'Another Entry', content: 'Here is some more content for another post.' },
-  { slug: 'learning-nextjs', title: 'Learning Next.js', content: 'Static exports are powerful! ' },
-];
-
-// --- 2. generateStaticParams Function ---
-// This function tells Next.js which slugs to generate at build time. Its structure remains the same.
+// Generate static params for all MDX files
 export async function generateStaticParams() {
+  const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-// --- 3. The Page Component (Next.js 15 Pattern) ---
-// The component is now async and the params prop is a Promise.
+// Optional metadata for the page to tie into SEO architecture
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const post = getPostBySlug(slug);
+    return constructMetadata({
+      title: post.title,
+      description: post.description,
+      path: `/blog/${post.slug}`,
+      publishedAt: post.publishedAt,
+      authorName: post.author.name,
+    });
+  } catch {
+    return {};
+  }
+}
+
 export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // Await the params promise to get the slug
   const { slug } = await params;
 
-  // Find the post data that matches the current slug
-  const post = posts.find((post) => post.slug === slug);
-
-  // Optional: Handle cases where the post is not found
-  if (!post) {
-    return (
-      <div className="container mx-auto p-8 text-center">
-        <h1 className="text-4xl font-bold">Post not found</h1>
-      </div>
-    );
+  let post;
+  try {
+    post = getPostBySlug(slug);
+  } catch {
+    return notFound();
   }
 
   return (
-    <article className="container mx-auto p-4 sm:p-6 lg:p-8">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <div className="prose lg:prose-xl">
-        <p>{post.content}</p>
-      </div>
-    </article>
+    <BlufLayout 
+      contentInfo={post}
+      breadcrumbs={[
+        { name: 'Home', item: '/' },
+        { name: 'Blog', item: '/blog' },
+        { name: post.title, item: `/blog/${post.slug}` }
+      ]}
+    >
+      <MDXRemote source={post.content || ''} />
+    </BlufLayout>
   );
 }

@@ -1,32 +1,32 @@
 // Location: src/app/about/page.tsx
 
 import { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo/metadata';
+import { JsonLd } from '@/components/seo/JsonLd';
 
-export const metadata: Metadata = {
-  title: 'About Me',
+export const metadata: Metadata = constructMetadata({
+  title: 'About Derrick Emery',
   description: 'Learn more about Derrick Emery, his background, skills, and what drives him.',
-  
-  // Open Graph tags for the About page
-  openGraph: {
-    title: 'About Derrick Emery',
-    description: 'Discover the story behind the developer.',
-    // You could create a specific OG image for this page if you want
-    // images: ['/about-og-image.png'], 
-  },
-
-  // Twitter-specific tags for the About page
-  twitter: {
-    title: 'About Derrick Emery',
-    description: 'Discover the story behind the developer.',
-    // You could also specify a different image for Twitter cards
-    // images: ['/about-twitter-image.png'], 
-  },
-};
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (
     // Main container for the page with padding
     <div className="container mx-auto p-4 sm:p-6 lg:p-8 min-h-[70vh]">
+      <JsonLd 
+        type="Person"
+        data={{
+          name: 'Derrick Emery',
+          jobTitle: 'Developer & Technology Leader',
+          url: 'https://derrickemery.com',
+          sameAs: [
+            'https://twitter.com/derrickemery',
+            'https://www.linkedin.com/in/derrickemery',
+            'https://github.com/derricke'
+          ],
+        }}
+      />
       {/* Responsive grid layout. Stacks on mobile, becomes 2 columns on medium screens and up. */}
       <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
 
