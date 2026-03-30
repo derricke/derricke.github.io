@@ -14,7 +14,7 @@ export interface AuthorProfile {
 export const AUTHORS: Record<string, AuthorProfile> = {
   'Derrick Emery': {
     name: 'Derrick Emery',
-    role: 'Digital Strategist & Developer',
+    role: 'Staff Software Engineer & Technical Strategist',
     bio: 'Digital Strategist and Developer focused on AI, SEO, and building high-performance web applications that drive real business value.',
     links: {
       linkedin: 'https://www.linkedin.com/in/derrickemery',

@@ -14,17 +14,31 @@ export default function AboutPage() {
   return (
     // Main container for the page with padding
     <div className="container mx-auto p-4 sm:p-6 lg:p-8 min-h-[70vh]">
-      <JsonLd 
-        type="Person"
+      <JsonLd
         data={{
-          name: 'Derrick Emery',
-          jobTitle: 'Developer & Technology Leader',
-          url: 'https://derrickemery.com',
-          sameAs: [
-            'https://twitter.com/derrickemery',
-            'https://www.linkedin.com/in/derrickemery',
-            'https://github.com/derricke'
-          ],
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://derrickemery.com/#person",
+              "name": "Derrick Emery",
+              "url": "https://derrickemery.com",
+              "image": "https://ik.imagekit.io/derricke/site-banner.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/derrickemery",
+                "https://github.com/derrickemery"
+              ],
+              "jobTitle": "Staff Software Engineer & Technical Strategist",
+              "description": "Digital Strategist and Developer focused on AI, SEO, and building high-performance web applications that drive real business value."
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://derrickemery.com/#website",
+              "url": "https://derrickemery.com",
+              "name": "Derrick Emery",
+              "publisher": { "@id": "/#person" },
+              "inLanguage": "en-US"
+            }
+          ]
         }}
       />
       <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">About Derrick Emery</h1>

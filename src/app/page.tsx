@@ -16,15 +16,42 @@ export default function Home() {
   return (
     <>
       <JsonLd
-        type="WebSite"
         data={{
-          name: 'Derrick Emery',
-          url: 'https://derrickemery.com',
-          description: 'Consulting and development services from a technical strategist, team leader and development expert.',
-          author: {
-            '@type': 'Person',
-            name: 'Derrick Emery'
-          }
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://derrickemery.com/#person",
+              "name": "Derrick Emery",
+              "url": "https://derrickemery.com",
+              "image": "https://ik.imagekit.io/derricke/site-banner.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/derrickemery",
+                "https://github.com/derrickemery"
+              ],
+              "jobTitle": "Digital Strategist & Developer",
+              "description": "Digital Strategist and Developer focused on AI, SEO, and building high-performance web applications that drive real business value."
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://derrickemery.com/#website",
+              "url": "https://derrickemery.com",
+              "name": "Derrick Emery",
+              "publisher": { "@id": "https://derrickemery.com/#person" },
+              "inLanguage": "en-US",
+              "description": "Technical strategy, team leadership, and development excellence."
+            },
+            {
+              "@type": "ProfessionalService",
+              "name": "Derrick Emery - Technical Strategy & Leadership",
+              "url": "https://derrickemery.com",
+              "image": "https://ik.imagekit.io/derricke/site-banner.png",
+              "description": "Consulting services specializing in technical strategy, team leadership, and high-scale platform development.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+              }
+            }
+          ]
         }}
       />
 
