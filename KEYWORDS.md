@@ -6,7 +6,7 @@ Leadership and Strategy
 5. Technical strategy
 6. Software architecture
 7. System design
-8. Technical team leadership
+8. Technical leadership
 9. Developer mentoring
 10. Code review best practices
 11. E-commerce technical lead

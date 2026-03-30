@@ -12,7 +12,7 @@ export const metadata: Metadata = constructMetadata({
 export default function ContactPage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
-      <JsonLd 
+      <JsonLd
         type="Organization"
         data={{
           name: 'Derrick Emery',
@@ -26,21 +26,21 @@ export default function ContactPage() {
         }}
       />
       <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Don’t hesitate to reach out!</h1>
-      
+
       {/* - Changed from 'grid' to 'flex' to control stacking order on mobile.
         - 'flex-col-reverse' stacks the form below the map on mobile screens.
         - 'md:flex-row' makes it a two-column layout on medium screens and up.
       */}
       <div className="flex flex-col-reverse md:flex-row gap-8">
-        
+
         {/* Left Column for Contact Form */}
         <div className="w-full md:w-5/12">
           <div className="h-[821px] rounded-lg overflow-hidden shadow-md">
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfbOtPTuB60eO9PTivqZkWJ_o6C1r1BcXLbdChIvIqgq5hqXA/viewform?embedded=true" 
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfbOtPTuB60eO9PTivqZkWJ_o6C1r1BcXLbdChIvIqgq5hqXA/viewform?embedded=true"
               className="w-full h-full"
-              frameBorder="0" 
-              marginHeight={0} 
+              frameBorder="0"
+              marginHeight={0}
               marginWidth={0}
             >
               Loading…
@@ -56,17 +56,16 @@ export default function ContactPage() {
               <ContactMap />
             </div>
           </div>
-          
+
           {/* Contact Information Section */}
           <div className="mt-8">
-            
+
             <p className="text-gray-600 mb-4">
               Derrick Emery currently lives and works in The Woodlands, Texas. For any questions, work or partnership requests please feel free to get in touch.
             </p>
             <div className="space-y-2 text-gray-700">
               <p><strong>Phone:</strong> +1 936.931.7467</p>
               <p><strong>Email:</strong> derrick@derrickemery.com</p>
-              <p><strong>Skype:</strong> derrick.emery</p>
             </div>
           </div>
         </div>
