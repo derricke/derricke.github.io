@@ -1,6 +1,7 @@
 import React from 'react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ContentItem } from '@/lib/content/types';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 interface BlufLayoutProps {
   contentInfo: ContentItem;
@@ -21,6 +22,15 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
+      {breadcrumbs && (
+        <Breadcrumbs 
+          items={breadcrumbs.map((b, i) => ({ 
+            name: b.name, 
+            href: b.item, 
+            current: i === breadcrumbs.length - 1 
+          }))} 
+        />
+      )}
       {/* JSON-LD Schemas injected safely into the DOM */}
       <JsonLd 
         type="Article" 

@@ -10,14 +10,15 @@ export interface ContentItem {
   category: string; // Category slug, e.g. "seo", "ai-tools"
   title: string;
   description: string;
-  // AIO Focus: The "Bottom Line Up Front" summary engineered for LLM consumption
+  // AIO Focus: The "Bottom Line Up Front" summary engineered for LLM extraction
   blufSummary: string;
   author: Author;
   publishedAt: string; // ISO 8601
   lastModifiedAt?: string; // ISO 8601
   primarySources?: string[]; // Citations/links to original sources
   tags?: string[];
-  content?: string; // Markdown/HTML body (optional depending on how layout wraps it)
+  content?: string; // Markdown/HTML body
+  readTime?: string; // E.g., "5 min read"
 }
 
 // Frontmatter schema for category index.mdx files.

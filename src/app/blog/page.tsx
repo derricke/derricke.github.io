@@ -5,6 +5,7 @@ import { getAllCategories } from '@/lib/content/api';
 import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { PostCard } from '@/components/PostCard';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Blog | Derrick Emery',
@@ -24,7 +25,7 @@ export default function BlogIndexPage() {
         data={{
           name: 'Derrick Emery Blog',
           url: `${siteUrl}/blog`,
-          description: 'Thoughts, tutorials, and deep dives into everything software engineering.',
+          description: 'Thoughts, tutorials, and deep dives into everything Derrick is interested in.',
           blogPost: posts.map((post) => ({
             '@type': 'BlogPosting',
             headline: post.title,
@@ -41,7 +42,7 @@ export default function BlogIndexPage() {
       <header className="mb-12 text-center md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Blog</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400">
-          Thoughts, tutorials, and deep dives into everything software engineering.
+          Thoughts, tutorials, and deep dives into everything Derrick is interested in.
         </p>
       </header>
 
@@ -90,46 +91,17 @@ export default function BlogIndexPage() {
         >
           Latest Posts
         </h2>
-        <div className="space-y-12">
-          {posts.map((post) => (
-            <article key={post.slug} className="group flex flex-col items-start justify-between">
-              <div className="flex items-center gap-x-4 text-xs flex-wrap">
-                <time dateTime={post.publishedAt} className="text-gray-500">
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </time>
-                <Link
-                  href={`/blog/${post.category}`}
-                  className="relative z-10 rounded-full bg-purple-100 dark:bg-purple-900/40 px-3 py-1.5 font-medium text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/40 transition-colors"
-                >
-                  {post.category}
-                </Link>
-                {post.tags?.map((tag) => (
-                  <span
-                    key={tag}
-                    className="relative z-10 rounded-full bg-gray-50 dark:bg-zinc-800 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="group relative">
-                <h3 className="mt-3 text-2xl font-semibold leading-6 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-amber-500 transition-colors">
-                  <Link href={`/blog/${post.category}/${post.slug}`}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </Link>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                  {post.blufSummary}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {posts.map((post) => {
+            const category = categories.find((c) => c.slug === post.category);
+            return (
+              <PostCard 
+                key={post.slug} 
+                post={post} 
+                categoryTitle={category?.title || post.category} 
+              />
+            );
+          })}
         </div>
       </section>
     </div>

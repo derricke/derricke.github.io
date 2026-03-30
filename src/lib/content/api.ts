@@ -5,36 +5,14 @@ import { CategoryItem, ContentItem } from '@/lib/content/types';
 
 const contentDirectory = path.join(process.cwd(), 'src/content/blog');
 
-// ---------------------------------------------------------------------------
-// Categories — each subdirectory is a category, defined by its index.mdx
-// ---------------------------------------------------------------------------
+// --- Utilities ---
 
-export function getCategoryBySlug(slug: string): CategoryItem {
-  const fullPath = path.join(contentDirectory, slug, 'index.mdx');
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  return {
-    slug,
-    title: data.title,
-    description: data.description,
-    content,
-  };
+function calculateReadTime(content: string): string {
+  const wordsPerMinute = 200;
+  const noOfWords = (content || '').split(/\s/g).length;
+  const minutes = Math.max(1, Math.ceil(noOfWords / wordsPerMinute));
+  return `${minutes} min read`;
 }
-
-export function getAllCategories(): CategoryItem[] {
-  if (!fs.existsSync(contentDirectory)) return [];
-
-  return fs
-    .readdirSync(contentDirectory, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => getCategoryBySlug(d.name))
-    .sort((a, b) => a.title.localeCompare(b.title));
-}
-
-// ---------------------------------------------------------------------------
-// Posts — every non-index .mdx file within a category subdirectory
-// ---------------------------------------------------------------------------
 
 function getAllPostFiles(): Array<{ category: string; filename: string }> {
   if (!fs.existsSync(contentDirectory)) return [];
@@ -57,9 +35,50 @@ function getAllPostFiles(): Array<{ category: string; filename: string }> {
   return results;
 }
 
+// --- Categories ---
+
+export function getCategoryBySlug(slug: string): CategoryItem {
+  const fullPath = path.join(contentDirectory, slug, 'index.mdx');
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Category metadata not found: ${fullPath}`);
+  }
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+
+  return {
+    slug,
+    title: data.title || slug,
+    description: data.description || '',
+    content,
+  };
+}
+
+export function getAllCategories(): CategoryItem[] {
+  if (!fs.existsSync(contentDirectory)) return [];
+
+  return fs
+    .readdirSync(contentDirectory, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => {
+        try {
+            return getCategoryBySlug(d.name);
+        } catch (e) {
+            console.error(e);
+            return null;
+        }
+    })
+    .filter((c): c is CategoryItem => c !== null)
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+// --- Posts ---
+
 export function getPostBySlug(category: string, slug: string): ContentItem {
   const realSlug = slug.replace(/\.mdx$/, '');
   const fullPath = path.join(contentDirectory, category, `${realSlug}.mdx`);
+  if (!fs.existsSync(fullPath)) {
+      throw new Error(`Post not found: ${fullPath}`);
+  }
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
@@ -77,12 +96,21 @@ export function getPostBySlug(category: string, slug: string): ContentItem {
     primarySources: data.primarySources,
     tags: data.tags,
     content,
+    readTime: calculateReadTime(content),
   };
 }
 
 export function getAllPosts(): ContentItem[] {
   return getAllPostFiles()
-    .map(({ category, filename }) => getPostBySlug(category, filename))
+    .map(({ category, filename }) => {
+        try {
+            return getPostBySlug(category, filename);
+        } catch (e) {
+            console.error(e);
+            return null;
+        }
+    })
+    .filter((p): p is ContentItem => p !== null)
     .sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1));
 }
 

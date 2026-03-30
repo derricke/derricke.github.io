@@ -1,11 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getAllCategories, getCategoryBySlug, getPostsByCategory } from '@/lib/content/api';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
+
+import { PostCard } from '@/components/PostCard';
 
 export async function generateStaticParams() {
   const categories = getAllCategories();
@@ -60,33 +62,16 @@ export default async function CategoryPage({
         }}
       />
 
-      {/* Breadcrumb nav */}
-      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-        <ol className="flex items-center gap-2">
-          <li>
-            <Link href="/" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link href="/blog" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
-              Blog
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-gray-900 dark:text-gray-100 font-medium">
-            {cat.title}
-          </li>
-        </ol>
-      </nav>
+      {/* Breadcrumbs Nav */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Blog', href: '/blog' },
+          { name: cat.title, href: `/blog/${cat.slug}`, current: true },
+        ]}
+      />
 
       <header className="mb-12">
-        <div className="inline-flex items-center gap-2 mb-4">
-          <span className="inline-block rounded-full bg-purple-100 dark:bg-purple-900/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-purple-700 dark:text-purple-300">
-            Category
-          </span>
-        </div>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{cat.title}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">{cat.description}</p>
       </header>
@@ -94,39 +79,9 @@ export default async function CategoryPage({
       {posts.length === 0 ? (
         <p className="text-gray-500 dark:text-gray-400">No posts in this category yet. Check back soon.</p>
       ) : (
-        <div className="space-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post) => (
-            <article key={post.slug} className="group flex flex-col items-start justify-between">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.publishedAt} className="text-gray-500">
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </time>
-                {post.tags?.map((tag) => (
-                  <span
-                    key={tag}
-                    className="relative z-10 rounded-full bg-gray-50 dark:bg-zinc-800 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="group relative">
-                <h2 className="mt-3 text-2xl font-semibold leading-6 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-amber-500 transition-colors">
-                  <Link href={`/blog/${category}/${post.slug}`}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </Link>
-                </h2>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                  {post.blufSummary}
-                </p>
-              </div>
-            </article>
+            <PostCard key={post.slug} post={post} categoryTitle={cat.title} />
           ))}
         </div>
       )}
