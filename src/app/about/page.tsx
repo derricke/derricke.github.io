@@ -27,6 +27,7 @@ export default function AboutPage() {
           ],
         }}
       />
+      <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">About Derrick Emery</h1>
       {/* Responsive grid layout. Stacks on mobile, becomes 2 columns on medium screens and up. */}
       <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
 

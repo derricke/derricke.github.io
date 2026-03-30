@@ -1,6 +1,6 @@
 import React from 'react';
 
-type JsonLdType = 'Article' | 'FAQPage' | 'BreadcrumbList' | 'Organization' | 'Person' | 'ContactPoint';
+type JsonLdType = 'Article' | 'FAQPage' | 'BreadcrumbList' | 'Organization' | 'Person' | 'ContactPoint' | 'ProfessionalService' | 'Blog' | 'WebSite';
 
 interface JsonLdProps {
   type: JsonLdType;

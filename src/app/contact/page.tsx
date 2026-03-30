@@ -25,7 +25,7 @@ export default function ContactPage() {
           }
         }}
       />
-      <h3 className="text-2xl font-semibold text-center mb-4">Don’t hesitate to reach out!</h3>
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Don’t hesitate to reach out!</h1>
       
       {/* - Changed from 'grid' to 'flex' to control stacking order on mobile.
         - 'flex-col-reverse' stacks the form below the map on mobile screens.
