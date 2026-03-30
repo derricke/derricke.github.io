@@ -54,10 +54,16 @@ export default function BlogIndexPage() {
         }}
       />
 
-      <header className="mb-12 text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Blog</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Thoughts, tutorials, and deep dives into everything Derrick is interested in.
+      <header className="mb-12 border-b border-zinc-200 dark:border-zinc-800 pb-8 text-center md:text-left">
+        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+          <span>ROOT:</span>
+          <span className="uppercase tracking-widest">/blog</span>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100 font-outfit">
+          Blog
+        </h1>
+        <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl font-outfit">
+          Thoughts, tutorials, and deep dives into technology, SEO, and AI.
         </p>
       </header>
 
@@ -76,22 +82,23 @@ export default function BlogIndexPage() {
               <Link
                 key={cat.slug}
                 href={`/blog/${cat.slug}`}
-                className="group flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50 p-6 hover:border-purple-300 dark:hover:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all duration-200"
+                className="group flex flex-col gap-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-200"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+                  <span className="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors font-outfit">
                     {cat.title}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-zinc-700 rounded-full px-2 py-0.5">
-                    {count} {count === 1 ? 'post' : 'posts'}
+                  <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-900 rounded-md px-1.5 py-0.5 border border-zinc-200 dark:border-zinc-800">
+                    {count} {count === 1 ? 'UNIT' : 'UNITS'}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 font-outfit">
                   {cat.description}
                 </p>
-                <span className="mt-1 text-xs font-medium text-purple-600 dark:text-purple-400 group-hover:underline">
-                  View all →
-                </span>
+                <div className="mt-2 flex items-center gap-2 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity">RUN</span>
+                  <span className="group-hover:underline">VIEW_CATEGORY --all</span>
+                </div>
               </Link>
             );
           })}

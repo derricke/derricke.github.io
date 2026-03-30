@@ -49,10 +49,10 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
               )}
               <Link
                 href={item.href}
-                className={`text-sm transition-colors ${
+                className={`text-xs font-mono uppercase tracking-tight transition-colors ${
                   item.current
-                    ? 'text-gray-900 dark:text-gray-100 cursor-default'
-                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+                    ? 'text-zinc-900 dark:text-zinc-100 cursor-default'
+                    : 'text-zinc-500 dark:text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400'
                 }`}
                 aria-current={item.current ? 'page' : undefined}
               >

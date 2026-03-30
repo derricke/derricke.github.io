@@ -86,9 +86,17 @@ export default async function CategoryPage({
         ]}
       />
 
-      <header className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{cat.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">{cat.description}</p>
+      <header className="mb-12 border-b border-zinc-200 dark:border-zinc-800 pb-8">
+        <div className="flex items-center gap-2 mb-2 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+          <span>DIR:</span>
+          <span className="uppercase tracking-widest">{cat.title}</span>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100 font-outfit">
+          {cat.title}
+        </h1>
+        <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl font-outfit">
+          {cat.description}
+        </p>
       </header>
 
       {posts.length === 0 ? (

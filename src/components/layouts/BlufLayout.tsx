@@ -89,12 +89,12 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
         {/* BLUF Summary - Engineered for LLM Extraction */}
         <aside 
           aria-label="Key Takeaways" 
-          className="bg-purple-50 dark:bg-zinc-900/50 p-6 rounded-lg ring-1 ring-purple-100 dark:ring-zinc-800/50"
+          className="bg-zinc-50 dark:bg-zinc-900/30 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-emerald-500 shadow-sm"
         >
-          <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-purple-900 dark:text-purple-300">
-            Key Takeaways
+          <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-2 text-emerald-600 dark:text-emerald-400">
+            [EXECUTIVE_SUMMARY]
           </h2>
-          <p className="text-base leading-relaxed text-gray-800 dark:text-gray-300">
+          <p className="text-base leading-relaxed text-zinc-800 dark:text-zinc-300 font-outfit">
             {contentInfo.blufSummary}
           </p>
         </aside>
