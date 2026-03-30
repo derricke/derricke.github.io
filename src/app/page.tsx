@@ -7,8 +7,8 @@ import { constructMetadata } from '@/lib/seo/metadata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Derrick Emery - Technical strategy, team leadership and development expert',
-  description: 'Experienced in transforming complex business requirements into robust, highly scalable digital platforms.',
+  title: 'Derrick Emery - Staff Software Engineer & Technical Strategist',
+  description: 'Experienced staff engineer specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
   path: '/',
 });
 
@@ -28,8 +28,8 @@ export default function Home() {
                 "https://www.linkedin.com/in/derrickemery",
                 "https://github.com/derrickemery"
               ],
-              "jobTitle": "Digital Strategist & Developer",
-              "description": "Digital Strategist and Developer focused on AI, SEO, and building high-performance web applications that drive real business value."
+              "jobTitle": "Staff Software Engineer & Technical Strategist",
+              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
             },
             {
               "@type": "WebSite",
@@ -38,14 +38,14 @@ export default function Home() {
               "name": "Derrick Emery",
               "publisher": { "@id": "https://derrickemery.com/#person" },
               "inLanguage": "en-US",
-              "description": "Technical strategy, team leadership, and development excellence."
+              "description": "Staff-level expertise in software engineering and technical strategy."
             },
             {
               "@type": "ProfessionalService",
               "name": "Derrick Emery - Technical Strategy & Leadership",
               "url": "https://derrickemery.com",
               "image": "https://ik.imagekit.io/derricke/site-banner.png",
-              "description": "Consulting services specializing in technical strategy, team leadership, and high-scale platform development.",
+              "description": "Consulting services specializing in Staff-level software engineering and technical strategy.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "US"
@@ -75,14 +75,14 @@ export default function Home() {
         */}
         <div className="bg-zinc-900 md:bg-transparent md:absolute md:inset-0 md:bg-gradient-to-r md:from-black/80 md:via-black/30 md:to-transparent flex flex-col justify-center px-6 py-10 md:py-0 md:px-12 lg:px-24">
           <h1 className="text-white text-3xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-4 max-w-4xl drop-shadow-lg leading-tight md:text-left text-center">
-            Technical Strategist, Team Leader & Development Expert
+            Technical strategy, team leadership and development expert
           </h1>
           <p className="text-zinc-400 md:text-gray-200 text-lg md:text-xl mb-8 md:mb-8 max-w-xl font-light drop-shadow-md md:text-left text-center">
             Transforming complex requirements into scalable digital platforms.
           </p>
           <div className="flex md:justify-start justify-center">
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="inline-block bg-white text-black hover:bg-black hover:text-white border-2 border-white px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 transform md:hover:-translate-y-1 shadow-lg"
             >
               Learn More About Derrick

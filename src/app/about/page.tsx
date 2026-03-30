@@ -28,7 +28,7 @@ export default function AboutPage() {
                 "https://github.com/derrickemery"
               ],
               "jobTitle": "Staff Software Engineer & Technical Strategist",
-              "description": "Digital Strategist and Developer focused on AI, SEO, and building high-performance web applications that drive real business value."
+              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
             },
             {
               "@type": "WebSite",

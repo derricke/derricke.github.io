@@ -16,7 +16,7 @@ export async function GET() {
 
   // Explicitly mapping top-level single pages:
   llmsTxt += `- [About Derrick Emery](${siteUrl}/about)\n`;
-  llmsTxt += `  Summary: Details on Derrick's experience as a Developer and Technology Leader.\n\n`;
+  llmsTxt += `  Summary: Details on Derrick's experience as a Staff Software Engineer and Technical Strategist.\n\n`;
 
   llmsTxt += `- [Contact Derrick Emery](${siteUrl}/contact)\n`;
   llmsTxt += `  Summary: Public contact details and submission form to reach Derrick Emery.\n\n`;

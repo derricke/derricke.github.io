@@ -1,0 +1,6 @@
+Apply Schema Markup to all pages. Use dynamically generated schema markup for each page based on the content of the page.
+
+Make a new "blog" type setup for "Guides"
+    - pillar page url should be of structure: /guide/[topic]
+    - cluster pages should be of structure: /guide/[topic]/[sub-topic]
+    - Use internal links to connect your pillar page and cluster pages
