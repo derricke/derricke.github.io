@@ -34,7 +34,7 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-[1001] bg-white shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-[1001] bg-white shadow-md">
       <nav className={`container mx-auto flex relative bg-white z-[5002] justify-between items-center px-4 transition-all duration-300 ${isScrolled ? 'h-12' : 'h-20'}`}>
         
         {/* Left Section: Hamburger Menu on Mobile */}
