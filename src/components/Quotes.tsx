@@ -90,7 +90,7 @@ export default function Quotes({ category }: QuotesProps) {
     <div className="py-10 bg-black">
       {/* The container has a fixed height and overflow-hidden to create the carousel effect */}
       <div 
-        className="container mx-auto text-center relative h-60 flex items-center justify-center overflow-hidden"
+        className="container mx-auto text-center relative min-h-[320px] md:h-80 flex items-center justify-center overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
