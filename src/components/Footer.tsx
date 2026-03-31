@@ -1,13 +1,21 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 
 export default function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-gray-800 text-gray-400 py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Copyright Text */}
           <div className="text-center sm:text-left mb-4 sm:mb-0">
-            <p>&copy; {new Date().getFullYear()} Derrick Emery. All Rights Reserved.</p>
+            <p>&copy; {year || 2026} Derrick Emery. All Rights Reserved.</p>
           </div>
 
           {/* Social Media Icons */}
