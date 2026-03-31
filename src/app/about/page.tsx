@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = constructMetadata({
   title: 'About Derrick Emery',
