@@ -4,8 +4,10 @@ const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-  }
-  /* config options here */
+  },
+  experimental: {
+    inlineCss: true, // This optimizes your CSS delivery for the static export
+  },
 };
 
 export default nextConfig;
