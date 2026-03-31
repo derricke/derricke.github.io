@@ -29,7 +29,21 @@ export default function AboutPage() {
                 "https://github.com/derrickemery"
               ],
               "jobTitle": "Technical strategy, team leadership and development expert",
-              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
+              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Parivie",
+                "url": "https://parivie.com"
+              },
+              "knowsAbout": [
+                "Technical Strategy",
+                "Software Engineering",
+                "Team Leadership",
+                "Architectural Design",
+                "AI/ML Implementation",
+                "SEO Optimization",
+                "Continuous Improvement"
+              ]
             },
             {
               "@type": "WebSite",
@@ -40,7 +54,7 @@ export default function AboutPage() {
               "inLanguage": "en-US"
             },
             {
-              "@type": "AboutPage",
+              "@type": "ProfilePage",
               "@id": "https://derrickemery.com/about/#webpage",
               "url": "https://derrickemery.com/about",
               "name": "About Derrick Emery",
