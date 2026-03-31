@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     inlineCss: true, // This optimizes your CSS delivery for the static export
+    prefetchInlining: true
   },
 };
 
