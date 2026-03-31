@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = constructMetadata({
   title: 'About Derrick Emery',
-  description: 'Technical strategy, team leadership and development expert. Discover the experience and philosophy behind Muted Tech.',
+  description: 'Experienced staff engineer specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
   path: '/about',
 });
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
                 "https://www.linkedin.com/in/derrickemery",
                 "https://github.com/derrickemery"
               ],
-              "jobTitle": "Technical strategy, team leadership and development expert",
+              "jobTitle": "Staff Software Engineer & Technical Strategist",
               "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",
               "worksFor": {
                 "@type": "Organization",
@@ -35,13 +35,25 @@ export default function AboutPage() {
                 "url": "https://parivie.com"
               },
               "knowsAbout": [
+                "E-commerce Architecture",
+                "Shopify",
+                "Magento",
+                "Salesforce Commerce",
                 "Technical Strategy",
-                "Software Engineering",
+                "Solution Architecture",
                 "Team Leadership",
                 "Architectural Design",
                 "AI/ML Implementation",
                 "SEO Optimization",
-                "Continuous Improvement"
+                "Continuous Improvement",
+                "PHP",
+                "JavaScript",
+                "React",
+                "MySQL",
+                "NoSQL",
+                "AWS",
+                "GCP",
+                "DevOps"
               ]
             },
             {
@@ -57,7 +69,7 @@ export default function AboutPage() {
               "@id": "https://derrickemery.com/about/#webpage",
               "url": "https://derrickemery.com/about",
               "name": "About Derrick Emery",
-              "description": "Technical strategy, team leadership and development expert. Discover the experience and philosophy behind Muted Tech.",
+              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",
               "mainEntity": { "@id": "https://derrickemery.com/#person" }
             }
           ]
