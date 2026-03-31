@@ -44,7 +44,7 @@ export default function AboutPage() {
                 "Team Leadership",
                 "Architectural Design",
                 "AI/ML Implementation",
-                "SEO Optimization",
+                "Search Engine Optimization",
                 "Continuous Improvement",
                 "PHP",
                 "JavaScript",
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold mb-6 text-zinc-900 dark:text-zinc-100 italic">At Home</h3>
                 <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   <p>
-                    My passion for creating and learning extends well beyond the office. To stay sharp, I continually experiment with emerging technologies—frequently integrating AI tooling into my workflow—and have autonomously built and deployed several full-stack web applications along with a dedicated mobile app.
+                    My passion for creating and learning extends well beyond the office. To stay sharp, I continually experiment with emerging technologies—frequently integrating AI/ML Implementation into my workflow—and have autonomously built and deployed several full-stack web applications along with a dedicated mobile app (Pure Rhythm).
                   </p>
                   <p>
                     When I do step entirely away from the keyboard, my love for learning doesn&apos;t stop. I&apos;m just as likely to be diving into a new cooking technique as I am a new piece of tech, and to clear my head, you&apos;ll either find me on a bike ride through the woods or lost in a good strategy game with friends.
@@ -161,10 +161,10 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-8 text-zinc-900 dark:text-zinc-100">Experience & Capabilities</h2>
               <div className="prose prose-zinc dark:prose-invert max-w-none space-y-6 text-zinc-600 dark:text-zinc-400">
                 <p className="text-lg leading-relaxed">
-                  With over two decades of experience in the technology sector, I have cultivated a deep expertise in transforming complex business requirements into robust, highly scalable digital platforms. My career has been heavily anchored in the fast-paced world of e-commerce, where I specialize in architecting expansive digital ecosystems and driving technical strategy from the ground up. Whether leading high-complexity platform migrations across enterprise systems or establishing unified coding standards for massive global teams, my focus remains steadfast on delivering solutions that directly support long-term revenue growth and operational excellence.
+                  With over two decades of experience in the technology sector, I have cultivated a deep expertise in transforming complex business requirements into robust, highly scalable digital platforms. My career has been heavily anchored in the fast-paced world of e-commerce, where I specialize in architecting expansive digital ecosystems and driving technical strategy from the ground up. Whether leading high-complexity platform migrations across enterprise systems or establishing unified coding standards for massive global teams, my focus remains steadfast on delivering solutions that directly support long-term revenue growth and operational excellence. I have managed major migrations and built custom solutions across platforms like Shopify, Magento, and Salesforce Commerce.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  My technical foundation spans the full stack architecture, utilizing modern technologies like React, Node.js, PHP, and progressive CSS frameworks, alongside deep enterprise API integrations. I combine this hands-on engineering proficiency with a strategic approach to infrastructure and cloud server administration across platforms like AWS and GCP, ensuring bulletproof stability under heavy user traffic. By integrating lean methodologies into active engineering workflows, I ensure that development cycles run efficiently, securely, and always perfectly aligned with the most pressing business targets.
+                  My technical foundation spans the full stack architecture, utilizing modern technologies like React, Node.js, PHP, and progressive CSS frameworks, alongside deep enterprise API integrations, backed by MySQL and NoSQL databases. I combine this hands-on engineering proficiency following DevOps best practices with a strategic approach to infrastructure and cloud server administration across platforms like AWS and GCP, ensuring bulletproof stability under heavy user traffic. By integrating lean methodologies into active engineering workflows, I ensure that development cycles run efficiently, securely, and always perfectly aligned with the most pressing business targets.
                 </p>
                 <p className="text-lg leading-relaxed">
                   A significant core of my expertise involves serving as the vital bridge between deep technology capabilities and overarching business strategy. I possess a strong track record of partnering seamlessly with executive and marketing leadership to ensure that technical roadmaps tightly align with demanding campaign schedules. By engineering complex internal reporting tools and custom applications that unify disparate data APIs, I continuously streamline marketing workflows and empower cross-functional teams with the rapid insights they need.
