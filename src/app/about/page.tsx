@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = constructMetadata({
   title: 'About Derrick Emery',
@@ -37,10 +38,19 @@ export default function AboutPage() {
               "name": "Derrick Emery",
               "publisher": { "@id": "https://derrickemery.com/#person" },
               "inLanguage": "en-US"
+            },
+            {
+              "@type": "AboutPage",
+              "@id": "https://derrickemery.com/about/#webpage",
+              "url": "https://derrickemery.com/about",
+              "name": "About Derrick Emery",
+              "description": "Technical strategy, team leadership and development expert. Discover the experience and philosophy behind Muted Tech.",
+              "mainEntity": { "@id": "https://derrickemery.com/#person" }
             }
           ]
         }}
       />
+
 
       {/* Hero Section with Mesh Gradient */}
       <section className="relative overflow-hidden pt-8 pb-6 md:pt-16 md:pb-12 border-b border-zinc-200 dark:border-zinc-800">
