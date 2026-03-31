@@ -65,6 +65,7 @@ export default function Home() {
             height={318}
             className="w-full h-auto shadow-md"
             priority
+            fetchPriority="high"
           />
         </div>
 
