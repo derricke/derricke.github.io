@@ -89,7 +89,7 @@ export function BlufLayout({ contentInfo, children, breadcrumbs }: BlufLayoutPro
         {/* BLUF Summary - Engineered for LLM Extraction */}
         <aside 
           aria-label="Key Takeaways" 
-          className="bg-zinc-50 dark:bg-zinc-900/30 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-emerald-600/50 shadow-sm"
+          className="bg-zinc-50 dark:bg-zinc-900/30 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm"
         >
           <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-2 text-zinc-500 dark:text-zinc-400">
             [EXECUTIVE_SUMMARY]
