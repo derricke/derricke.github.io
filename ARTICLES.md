@@ -15,4 +15,4 @@ Best Practices for E-Commerce UX Design
 # Questions
 Where can I get a product manager for e-commerce?
 
-Why is UI/UX important for an e-commerce web design?
+~~Why is UI/UX important for an e-commerce website?~~ (Published to blog)
