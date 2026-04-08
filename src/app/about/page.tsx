@@ -25,7 +25,8 @@ export default function AboutPage() {
               "image": "https://ik.imagekit.io/derricke/portrait.png",
               "sameAs": [
                 "https://www.linkedin.com/in/derrickemery",
-                "https://github.com/derrickemery"
+                "https://github.com/derrickemery",
+                "https://dev.to/derrickemery"
               ],
               "jobTitle": "Staff Software Engineer & Technical Strategist",
               "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",

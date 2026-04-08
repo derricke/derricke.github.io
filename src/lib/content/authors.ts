@@ -23,6 +23,7 @@ export const AUTHORS: Record<string, AuthorProfile> = {
     sameAs: [
       'https://www.linkedin.com/in/derrickemery',
       'https://github.com/derrickemery',
+      'https://dev.to/derrickemery',
     ],
   },
 };
