@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +12,10 @@ export default function Header() {
 
   // This effect runs only once on the client after the component mounts
   useEffect(() => {
-    setIsClient(true);
+    const timer = setTimeout(() => {
+      setIsClient(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -41,8 +45,12 @@ export default function Header() {
         <div className="w-1/3">
           <div className="md:hidden">
             {isClient && (
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-                <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'} text-2xl text-gray-700`}></i>
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                aria-label="Toggle menu"
+                className="cursor-pointer hover:text-orange-500 transition-colors duration-200"
+              >
+                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             )}
           </div>
@@ -50,7 +58,7 @@ export default function Header() {
 
         {/* Center Section: Logo */}
         <div className="w-1/3 flex justify-center">
-          <Link href="/" className="h-full flex items-center" onClick={() => setIsMenuOpen(false)}>
+          <Link href="/" className="h-full flex items-center cursor-pointer" onClick={() => setIsMenuOpen(false)}>
             <Image
                 src="/images/logo-192x192.png"
                 alt="Derrick Emery Logo"
@@ -65,10 +73,10 @@ export default function Header() {
         {/* Right Section: Desktop Navigation */}
         <div className="w-1/3 flex justify-end">
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-600 hover:text-black text-sm">Home</Link>
-            <Link href="/about" className="text-gray-600 hover:text-black text-sm">About Me</Link>
-            <Link href="/blog" className="text-gray-600 hover:text-black text-sm">Blog</Link>
-            <Link href="/contact" className="text-gray-600 hover:text-black text-sm">Contact</Link>
+            <Link href="/" className="text-gray-600 hover:text-black text-sm cursor-pointer transition-colors">Home</Link>
+            <Link href="/about" className="text-gray-600 hover:text-black text-sm cursor-pointer transition-colors">About Me</Link>
+            <Link href="/blog" className="text-gray-600 hover:text-black text-sm cursor-pointer transition-colors">Blog</Link>
+            <Link href="/contact" className="text-gray-600 hover:text-black text-sm cursor-pointer transition-colors">Contact</Link>
           </div>
         </div>
 
@@ -86,18 +94,11 @@ export default function Header() {
           
           {/* Menu Panel */}
           <div className={`md:hidden fixed top-0 left-0 w-[90%] h-screen bg-white z-[5000] transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-            {/*<button 
-              onClick={() => setIsMenuOpen(false)} 
-              className="absolute top-6 pl-4 z-[4999]" 
-              aria-label="Close menu"
-            >
-              <i className="fa-solid fa-xmark text-3xl text-gray-700"></i>
-            </button>*/}
             <div className="flex flex-col items-start justify-start h-full space-y-8 pt-24 pl-4">
-              <Link href="/" className="text-2xl text-black hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link href="/about" className="text-2xl text-black hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>About Me</Link>
-              <Link href="/blog" className="text-2xl text-black hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>Blog</Link>
-              <Link href="/contact" className="text-2xl text-black hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link href="/" className="text-2xl text-black hover:text-orange-500 cursor-pointer transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link href="/about" className="text-2xl text-black hover:text-orange-500 cursor-pointer transition-colors" onClick={() => setIsMenuOpen(false)}>About Me</Link>
+              <Link href="/blog" className="text-2xl text-black hover:text-orange-500 cursor-pointer transition-colors" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+              <Link href="/contact" className="text-2xl text-black hover:text-orange-500 cursor-pointer transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             </div>
           </div>
         </>
