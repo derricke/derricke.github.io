@@ -20,6 +20,8 @@ Write using these rules to sound completely human:
 
 - Real voice: Don't force friendliness or fake excitement
 
+- No em dashes, use normal dashes instead
+
 ### STYLE IMPLEMENTATION
 
 - Keep grammar conversational: Simple sentence structures, not academic writing
