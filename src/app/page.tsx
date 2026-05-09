@@ -11,8 +11,8 @@ const Quotes = dynamic(() => import('@/components/Quotes'), {
 });
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Derrick Emery - Strategic Technology Leader',
-  description: 'Experienced strategic technology leader specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
+  title: 'Derrick Emery - Strategic Technical Leader',
+  description: 'Strategic Technical Leader specializing in architectural excellence and high-performance digital platforms that drive real business value.',
   path: '/',
 });
 
@@ -82,7 +82,7 @@ export default function Home() {
         */}
         <div className="bg-zinc-900 md:bg-transparent md:absolute md:inset-0 md:bg-gradient-to-r md:from-black/80 md:via-black/30 md:to-transparent flex flex-col justify-center px-6 py-10 md:py-0 md:px-12 lg:px-24">
           <h1 className="text-white text-3xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-4 max-w-4xl drop-shadow-lg leading-tight md:text-left text-center">
-            Technical strategy, team leadership and development expert
+            Strategic Technical Leader
           </h1>
           <p className="text-zinc-400 md:text-gray-200 text-lg md:text-xl mb-8 md:mb-8 max-w-xl font-light drop-shadow-md md:text-left text-center">
             Transforming complex requirements into scalable digital platforms.
