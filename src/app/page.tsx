@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import dynamic from 'next/dynamic';
 import Features from '@/components/Features';
@@ -63,16 +62,21 @@ export default function Home() {
       <section className="relative flex flex-col group overflow-hidden">
         {/* The Banner Image: Using original width/height props to ensure perfect desktop scaling */}
         <div className="w-full">
-          <Image
-            src="https://ik.imagekit.io/derricke/site-banner.png?tr=f-auto,q-72,w-1500"
-            alt="Site banner"
-            width={1500}
-            height={318}
-            className="w-full h-auto shadow-md"
-            sizes="100vw"
-            priority
-            fetchPriority="high"
-          />
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcSet="https://ik.imagekit.io/derricke/site-banner.png?tr=w-828,q-72,f-auto"
+            />
+            <img
+              src="https://ik.imagekit.io/derricke/site-banner.png?tr=w-1500,q-72,f-auto"
+              alt="Site banner"
+              width={1500}
+              height={318}
+              className="w-full h-auto shadow-md"
+              fetchPriority="high"
+              loading="eager"
+            />
+          </picture>
         </div>
 
         {/* 
