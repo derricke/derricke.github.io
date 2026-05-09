@@ -1,18 +1,8 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Twitter, Facebook, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
-  const [year, setYear] = useState<number>(2026);
-
-  useEffect(() => {
-    const currentYear = new Date().getFullYear();
-    const timer = setTimeout(() => {
-      setYear(currentYear);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-800 text-gray-400 py-6">
@@ -20,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between">
           {/* Copyright Text */}
           <div className="text-center sm:text-left mt-4 sm:mt-0">
-            <p>&copy; {year || 2026} Derrick Emery. All Rights Reserved.</p>
+            <p>&copy; {year} Derrick Emery. All Rights Reserved.</p>
           </div>
 
           {/* Social Media Icons */}

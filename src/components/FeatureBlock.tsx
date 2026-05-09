@@ -1,11 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { LucideIcon } from 'lucide-react';
 
 
 // Define the props that this component will accept
 interface FeatureBlockProps {
-  iconClass: IconDefinition;
+  iconClass: LucideIcon;
   title: string;
   description: string;
   bgColorClass?: string;
@@ -25,6 +24,8 @@ export default function FeatureBlock({
   hoverIconColorClass = 'text-white',
   hoverBorderColorClass = 'group-hover:bg-orange-500'
 }: FeatureBlockProps) {
+  const Icon = iconClass;
+
   return (
     // Add "group" to this parent div to enable group-hover on child elements
     <div className="text-center p-4 group">
@@ -39,9 +40,10 @@ export default function FeatureBlock({
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92px] h-[92px] rounded-full border border-gray-200 ${hoverBorderColorClass} transition-all duration-300 ease-in-out group-hover:scale-[1.18]`}></div>
 
         {/* The icon itself, with a z-index to ensure it stays on top */}
-        <FontAwesomeIcon
-          icon={iconClass}
+        <Icon
           className={`${iconColorClass} ${hoverIconColorClass} text-4xl w-[1em] h-[1em] transition-colors duration-300 ease-in-out relative z-10`}
+          strokeWidth={1.8}
+          aria-hidden="true"
         />
       </div>
 

@@ -1,62 +1,62 @@
 import React from 'react';
 import FeatureBlock from './FeatureBlock';
 import {
-  faTabletScreenButton,
-  faGem,
-  faFileLines,
-  faGift,
-  faPalette,
-  faAtom,
-  faFileCode,
-  faWrench
-} from '@fortawesome/free-solid-svg-icons';
+  TabletSmartphone,
+  Gem,
+  FileText,
+  Gift,
+  Palette,
+  Atom,
+  FileCode,
+  Wrench,
+} from 'lucide-react';
 
 const featuresData = [
   {
     category: 'main',
-    icon: faTabletScreenButton,
+    icon: TabletSmartphone,
     title: '100% Responsive Design',
     description: 'All of our projects use responsive design to make sure they work on as many devices as possible.',
   },
   {
     category: 'main',
-    icon: faGem,
+    icon: Gem,
     title: 'Award Winning Quality',
     description: 'We only put our best effort into our work. And it shows.',
   },
   {
     category: 'main',
-    icon: faFileLines,
+    icon: FileText,
     title: 'Extensive Documentation',
     description: 'We explain everything we do at every step of the way.',
   },
   {
     category: 'main',
-    icon: faGift,
+    icon: Gift,
     title: 'Loaded With Goodies',
     description: 'We go above and beyond and give you as much as possible.',
   },
   {
     category: 'main2',
-    icon: faPalette,
+    icon: Palette,
     title: 'Designs To Brag About',
     description: 'You want to show off your work, and we make sure your customers will notice.',
   },
   {
     category: 'main2',
-    icon: faAtom,
+    icon: Atom,
     title: 'Loaded With Power',
     description: 'Get your point across with amazing styles and font faces.',
   },
   {
     category: 'main2',
-    icon: faFileCode,
+    icon: FileCode,
     title: 'Clean Modern Code',
     description: 'We use the latest technologies to ensure your project is fast, secure, and easy to maintain.',
   },
   {
     category: 'main2',
-    icon: faWrench,
+    icon: Wrench,
     title: 'Updates & Support',
     description: 'The end of the project is just the beginning. We are here to help you with any issues you may have.',
   }

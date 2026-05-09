@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = constructMetadata({
   title: 'About Derrick Emery',
-  description: 'Experienced staff engineer specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
+  description: 'Experienced Technology Leader specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
   path: '/about',
 });
 
@@ -28,8 +28,8 @@ export default function AboutPage() {
                 "https://github.com/derrickemery",
                 "https://dev.to/derrickemery"
               ],
-              "jobTitle": "Staff Software Engineer & Technical Strategist",
-              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",
+              "jobTitle": "Strategic Technology Leader",
+              "description": "Strategic Technology Leader focused on AI, SEO, and building high-performance web applications that drive real business value.",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Parivie",
@@ -70,7 +70,7 @@ export default function AboutPage() {
               "@id": "https://derrickemery.com/about/#webpage",
               "url": "https://derrickemery.com/about",
               "name": "About Derrick Emery",
-              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value.",
+              "description": "Strategic Technology Leader focused on AI, SEO, and building high-performance web applications that drive real business value.",
               "mainEntity": { "@id": "https://derrickemery.com/#person" }
             }
           ]
@@ -80,10 +80,10 @@ export default function AboutPage() {
 
       {/* Hero Section with Mesh Gradient */}
       <section className="relative overflow-hidden pt-8 pb-6 md:pt-16 md:pb-12 border-b border-zinc-200 dark:border-zinc-800">
-        <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#3f3f46,transparent)]" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-zinc-400/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-zinc-600/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 -z-10 opacity-25 dark:opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#52525b,transparent)] md:bg-[radial-gradient(circle_at_50%_-20%,#3f3f46,transparent)]" />
+          <div className="hidden md:block absolute top-0 left-1/4 w-96 h-96 bg-zinc-400/20 rounded-full blur-3xl animate-pulse" />
+          <div className="hidden md:block absolute bottom-0 right-1/4 w-96 h-96 bg-zinc-600/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-6">
@@ -95,6 +95,7 @@ export default function AboutPage() {
                   src="/images/portrait.png"
                   alt="Derrick Emery"
                   fill
+                  sizes="(max-width: 768px) 160px, (max-width: 1024px) 224px, 288px"
                   className="object-cover transform -rotate-3 transition-transform duration-700 hover:scale-110"
                   priority
                 />

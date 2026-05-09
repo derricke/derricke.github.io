@@ -1,14 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
 import Features from '@/components/Features';
-import Quotes from '@/components/Quotes';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { Metadata } from 'next';
 
+const Quotes = dynamic(() => import('@/components/Quotes'), {
+  loading: () => <div className="min-h-[320px] bg-black" aria-hidden="true" />,
+});
+
 export const metadata: Metadata = constructMetadata({
-  title: 'Derrick Emery - Staff Software Engineer & Technical Strategist',
-  description: 'Experienced staff engineer specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
+  title: 'Derrick Emery - Strategic Technology Leader',
+  description: 'Experienced strategic technology leader specializing in technical strategy, architectural excellence, and high-performance digital platforms.',
   path: '/',
 });
 
@@ -29,8 +33,8 @@ export default function Home() {
                 "https://github.com/derrickemery",
                 "https://dev.to/derrickemery"
               ],
-              "jobTitle": "Staff Software Engineer & Technical Strategist",
-              "description": "Staff Software Engineer and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
+              "jobTitle": "Strategic Technology Leader & Technical Strategist",
+              "description": "Strategic Technology Leader and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
             },
             {
               "@type": "WebSite",
@@ -39,14 +43,14 @@ export default function Home() {
               "name": "Derrick Emery",
               "publisher": { "@id": "https://derrickemery.com/#person" },
               "inLanguage": "en-US",
-              "description": "Staff-level expertise in software engineering and technical strategy."
+              "description": "Strategic Technology Leader with expertise in software engineering and technical strategy."
             },
             {
               "@type": "ProfessionalService",
               "name": "Derrick Emery - Technical Strategy & Leadership",
               "url": "https://derrickemery.com",
               "image": "https://ik.imagekit.io/derricke/site-banner.png",
-              "description": "Consulting services specializing in Staff-level software engineering and technical strategy.",
+              "description": "Consulting services specializing in strategic technology leadership and technical strategy.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "US"
@@ -60,11 +64,12 @@ export default function Home() {
         {/* The Banner Image: Using original width/height props to ensure perfect desktop scaling */}
         <div className="w-full">
           <Image
-            src="https://ik.imagekit.io/derricke/site-banner.png"
+            src="https://ik.imagekit.io/derricke/site-banner.png?tr=f-auto,q-72,w-1500"
             alt="Site banner"
             width={1500}
             height={318}
             className="w-full h-auto shadow-md"
+            sizes="100vw"
             priority
             fetchPriority="high"
           />
