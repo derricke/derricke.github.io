@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 
 const baseUrl = 'https://derrickemery.com';
 
+const BUILD = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14); // YYYYMMDDHHmmss
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -83,6 +85,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="anonymous" />
       <link rel="dns-prefetch" href="https://ik.imagekit.io" />
+      <meta name="build" content={BUILD} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
