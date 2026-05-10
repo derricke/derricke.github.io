@@ -79,19 +79,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://ik.imagekit.io" />
-      </head>
+      <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="anonymous" />
+      <link rel="dns-prefetch" href="https://ik.imagekit.io" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         {/* Google Analytics Scripts */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-PFCLTP7MEP"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

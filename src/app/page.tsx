@@ -1,12 +1,15 @@
 import Link from "next/link";
 import dynamic from 'next/dynamic';
-import Features from '@/components/Features';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { Metadata } from 'next';
 
 const Quotes = dynamic(() => import('@/components/Quotes'), {
   loading: () => <div className="min-h-[320px] bg-black" aria-hidden="true" />,
+});
+
+const Features = dynamic(() => import('@/components/Features'), {
+  loading: () => <div className="min-h-[200px]" aria-hidden="true" />,
 });
 
 export const metadata: Metadata = constructMetadata({
@@ -18,49 +21,21 @@ export const metadata: Metadata = constructMetadata({
 export default function Home() {
   return (
     <>
-      <JsonLd
-        data={{
-          "@graph": [
-            {
-              "@type": "Person",
-              "@id": "https://derrickemery.com/#person",
-              "name": "Derrick Emery",
-              "url": "https://derrickemery.com",
-              "image": "https://ik.imagekit.io/derricke/site-banner.png",
-              "sameAs": [
-                "https://www.linkedin.com/in/derrickemery",
-                "https://github.com/derrickemery",
-                "https://dev.to/derrickemery"
-              ],
-              "jobTitle": "Strategic Technology Leader & Technical Strategist",
-              "description": "Strategic Technology Leader and Technical Strategist focused on AI, SEO, and building high-performance web applications that drive real business value."
-            },
-            {
-              "@type": "WebSite",
-              "@id": "https://derrickemery.com/#website",
-              "url": "https://derrickemery.com",
-              "name": "Derrick Emery",
-              "publisher": { "@id": "https://derrickemery.com/#person" },
-              "inLanguage": "en-US",
-              "description": "Strategic Technology Leader with expertise in software engineering and technical strategy."
-            },
-            {
-              "@type": "ProfessionalService",
-              "name": "Derrick Emery - Technical Strategy & Leadership",
-              "url": "https://derrickemery.com",
-              "image": "https://ik.imagekit.io/derricke/site-banner.png",
-              "description": "Consulting services specializing in strategic technology leadership and technical strategy.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-              }
-            }
-          ]
-        }}
+      {/* Preload LCP images for both mobile and desktop */}
+      <link
+        rel="preload"
+        as="image"
+        href="https://ik.imagekit.io/derricke/site-banner.png?tr=w-828,q-72,f-auto"
+        media="(max-width: 767px)"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="https://ik.imagekit.io/derricke/site-banner.png?tr=w-1500,q-72,f-auto"
+        media="(min-width: 768px)"
       />
 
       <section className="relative flex flex-col group overflow-hidden">
-        {/* The Banner Image: Using original width/height props to ensure perfect desktop scaling */}
         <div className="w-full">
           <picture>
             <source
@@ -118,11 +93,50 @@ export default function Home() {
 
       <Features category="main2" />
 
-      <div className="w-full h-30 bg-black flex items-center justify-center text-center shadow-md px-4">
+      <div className="w-full h-32 bg-black flex items-center justify-center text-center shadow-md px-4">
         <p className="text-white text-2xl sm:text-4xl font-medium tracking-wider">Coded to pixel perfection.</p>
       </div>
 
+      <JsonLd
+        data={{
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://derrickemery.com/#person",
+              "name": "Derrick Emery",
+              "url": "https://derrickemery.com",
+              "image": "https://ik.imagekit.io/derricke/site-banner.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/derrickemery",
+                "https://github.com/derrickemery",
+                "https://dev.to/derrickemery"
+              ],
+              "jobTitle": "Strategic Technical Leader",
+              "description": "Strategic Technical Leader focused on AI, SEO, and building high-performance web applications that drive real business value."
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://derrickemery.com/#website",
+              "url": "https://derrickemery.com",
+              "name": "Derrick Emery",
+              "publisher": { "@id": "https://derrickemery.com/#person" },
+              "inLanguage": "en-US",
+              "description": "Strategic Technical Leader with expertise in software engineering and technical strategy."
+            },
+            {
+              "@type": "ProfessionalService",
+              "name": "Derrick Emery - Technical Strategy & Leadership",
+              "url": "https://derrickemery.com",
+              "image": "https://ik.imagekit.io/derricke/site-banner.png",
+              "description": "Consulting services specializing in strategic technology leadership and technical strategy.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+              }
+            }
+          ]
+        }}
+      />
     </>
-
   );
 }
