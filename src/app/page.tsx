@@ -33,6 +33,7 @@ export default function Home() {
         as="image"
         href="https://ik.imagekit.io/derricke/site-banner.png?tr=w-1500,q-72,f-auto"
         media="(min-width: 768px)"
+        fetchPriority="high"
       />
 
       <section className="relative flex flex-col group overflow-hidden">
