@@ -21,18 +21,13 @@ export const metadata: Metadata = constructMetadata({
 export default function Home() {
   return (
     <>
-      {/* Preload LCP images for both mobile and desktop */}
+      {/* Preload LCP banner — mirrors <picture> selection logic exactly */}
       <link
         rel="preload"
         as="image"
-        href="https://ik.imagekit.io/derricke/site-banner.png?tr=w-828,q-72,f-auto"
-        media="(max-width: 767px)"
-      />
-      <link
-        rel="preload"
-        as="image"
-        href="https://ik.imagekit.io/derricke/site-banner.png?tr=w-1500,q-72,f-auto"
-        media="(min-width: 768px)"
+        // @ts-expect-error — imageSrcSet/imageSizes are valid but not yet in React's types
+        imageSrcSet="https://ik.imagekit.io/derricke/site-banner.png?tr=w-828,q-72,f-auto 828w, https://ik.imagekit.io/derricke/site-banner.png?tr=w-1500,q-72,f-auto 1500w"
+        imageSizes="(max-width: 767px) 100vw, 1500px"
         fetchPriority="high"
       />
 
