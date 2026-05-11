@@ -93,6 +93,7 @@ export function getPostBySlug(category: string, slug: string): ContentItem {
     lastModifiedAt: data.lastModifiedAt?.toISOString
       ? data.lastModifiedAt.toISOString()
       : data.lastModifiedAt,
+    image: data.image,
     primarySources: data.primarySources,
     tags: data.tags,
     content,

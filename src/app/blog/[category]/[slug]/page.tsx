@@ -23,12 +23,16 @@ export async function generateMetadata({
   const { category, slug } = await params;
   try {
     const post = getPostBySlug(category, slug);
+    const images = post.image
+      ? [`https://ik.imagekit.io/derricke/tr:w-1200,h-630,f-jpg,c-at_max/${post.image.replace(/^\//, '')}`]
+      : undefined;
     return constructMetadata({
       title: post.title,
       description: post.description,
       path: `/blog/${post.category}/${post.slug}`,
       publishedAt: post.publishedAt,
       authorName: post.author.name,
+      images,
     });
   } catch {
     return {};

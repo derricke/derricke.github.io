@@ -15,6 +15,7 @@ export interface ContentItem {
   author: Author;
   publishedAt: string; // ISO 8601
   lastModifiedAt?: string; // ISO 8601
+  image?: string; // Article hero image path (used for OG meta)
   primarySources?: string[]; // Citations/links to original sources
   tags?: string[];
   content?: string; // Markdown/HTML body
