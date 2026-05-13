@@ -60,46 +60,46 @@ export default function PortfolioPage() {
               <h2 className="text-3xl font-bold mb-8 text-zinc-900 dark:text-zinc-100">Professional Experience</h2>
               <div className="prose prose-zinc dark:prose-invert max-w-none space-y-6 text-zinc-600 dark:text-zinc-400">
                 <p className="text-lg leading-relaxed">
-                  I am an E-Commerce Technology Leader with over 20 years of experience orchestrating high-performance digital architectures for enterprise brands. My background includes directing technical strategy for a $30M+ ARR Health & Wellness brand and a portfolio of $10M+ ARR storefronts in the Health & Beauty sector.
+                  I am an E-Commerce Technology Leader with over 20 years of experience orchestrating high-performance digital architectures for enterprise brands. My background includes directing technical strategy for a $30M+ ARR Health & Wellness brand and a portfolio of $10M+ ARR storefronts in the Beauty & Skincare sector.
                 </p>
                 <div className="not-prose mt-8">
                   <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-5">Portfolio</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <a href="https://globalhealing.com" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors">
-                      <img src="/images/portfolio/globalhealing-thumb.jpg" alt="globalhealing.com preview" className="w-full h-10 object-cover block" loading="lazy" />
-                      <div className="px-3 py-1">
-                        <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Global Healing</div>
-                        <div className="text-xs">globalhealing.com</div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <img src="/images/portfolio/globalhealing-thumb.jpg" alt="Global Healing preview" className="w-full h-56 object-cover block" loading="lazy" />
+                      <div className="px-5 py-3">
+                        <h4 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Global Healing</h4>
+                        <a href="https://globalhealing.com" target="_blank" rel="noopener noreferrer nofollow" referrerPolicy="no-referrer" className="inline-flex mt-2 items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-medium text-sm px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors">Visit Website</a>
                       </div>
-                    </a>
-                    <a href="https://parivie.com/pages/lp-earlyaccessbfcm" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors">
-                      <img src="/images/portfolio/parivie-thumb.jpg" alt="parivie.com preview" className="w-full h-10 object-cover block" loading="lazy" />
-                      <div className="px-3 py-1">
-                        <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Pairive</div>
-                        <div className="text-xs">parivie.com</div>
+                    </div>
+                    <div className="w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <img src="/images/portfolio/parivie-thumb.jpg" alt="Parivie preview" className="w-full h-56 object-cover block" loading="lazy" />
+                      <div className="px-5 py-3">
+                        <h4 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Parivie</h4>
+                        <a href="https://parivie.com/pages/lp-earlyaccessbfcm" target="_blank" rel="noopener noreferrer nofollow" referrerPolicy="no-referrer" className="inline-flex mt-2 items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-medium text-sm px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors">Visit Website</a>
                       </div>
-                    </a>
-                    <a href="https://kindscience.com" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors">
-                      <img src="/images/portfolio/kindscience-thumb.jpg" alt="kindscience.com preview" className="w-full h-10 object-cover block" loading="lazy" />
-                      <div className="px-3 py-1">
-                        <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Kind Science</div>
-                        <div className="text-xs">kindscience.com</div>
+                    </div>
+                    <div className="w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <img src="/images/portfolio/kindscience-thumb.jpg" alt="Kind Science preview" className="w-full h-56 object-cover block" loading="lazy" />
+                      <div className="px-5 py-3">
+                        <h4 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Kind Science</h4>
+                        <a href="https://kindscience.com" target="_blank" rel="noopener noreferrer nofollow" referrerPolicy="no-referrer" className="inline-flex mt-2 items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-medium text-sm px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors">Visit Website</a>
                       </div>
-                    </a>
-                    <a href="https://smileactives.com" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors">
-                      <img src="/images/portfolio/smileactives-thumb.jpg" alt="smileactives.com preview" className="w-full h-10 object-cover block" loading="lazy" />
-                      <div className="px-3 py-1">
-                        <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Smile Actives</div>
-                        <div className="text-xs">smileactives.com</div>
+                    </div>
+                    <div className="w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <img src="/images/portfolio/smileactives-thumb.jpg" alt="Smile Actives preview" className="w-full h-56 object-cover block" loading="lazy" />
+                      <div className="px-5 py-3">
+                        <h4 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Smile Actives</h4>
+                        <a href="https://smileactives.com" target="_blank" rel="noopener noreferrer nofollow" referrerPolicy="no-referrer" className="inline-flex mt-2 items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-medium text-sm px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors">Visit Website</a>
                       </div>
-                    </a>
-                    <a href="https://crepeerase.com/products/rejuvenate-restore-kit?selling_plan=3763175576" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors">
-                      <img src="/images/portfolio/crepeerase-thumb.jpg" alt="crepeerase.com preview" className="w-full h-10 object-cover block" loading="lazy" />
-                      <div className="px-3 py-1">
-                        <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Crepe Erase</div>
-                        <div className="text-xs">crepeerase.com</div>
+                    </div>
+                    <div className="w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <img src="/images/portfolio/crepeerase-thumb.jpg" alt="Crepe Erase preview" className="w-full h-56 object-cover block" loading="lazy" />
+                      <div className="px-5 py-3">
+                        <h4 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Crepe Erase</h4>
+                        <a href="https://crepeerase.com/products/rejuvenate-restore-kit?selling_plan=3763175576" target="_blank" rel="noopener noreferrer nofollow" referrerPolicy="no-referrer" className="inline-flex mt-2 items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-medium text-sm px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors">Visit Website</a>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mt-8">Strategic Impact & Expertise</h3>
